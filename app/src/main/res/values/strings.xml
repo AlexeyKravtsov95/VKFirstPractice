@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">VKPracticeOne</string>
+    <string name="title_topbar">Приложения</string>
 </resources>
