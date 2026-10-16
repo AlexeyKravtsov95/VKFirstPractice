@@ -1,5 +1,6 @@
 package com.alexkravtsov.vkpracticeone.screen.applist
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -26,11 +27,13 @@ import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 @Composable
 fun AppListItem(
     app: AppModel,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onAppClick: (AppModel) -> Unit = {},
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
+            .clickable { onAppClick(app)}
             .padding(
                 horizontal = 16.dp,
                 vertical = 12.dp
@@ -72,7 +75,7 @@ fun AppListItem(
 
 @Preview
 @Composable
-fun AppListItemPreview() {
+private fun AppListItemPreview() {
     VKPracticeOneTheme {
         AppListItem(
             app = AppModel(

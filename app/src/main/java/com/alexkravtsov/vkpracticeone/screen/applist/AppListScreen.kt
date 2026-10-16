@@ -26,7 +26,10 @@ import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppListScreen(apps: List<AppModel>) {
+fun AppListScreen(
+    apps: List<AppModel>,
+    onAppClick: (AppModel) -> Unit,
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -54,8 +57,8 @@ fun AppListScreen(apps: List<AppModel>) {
                 .padding(innerPadding),
             contentPadding = PaddingValues(vertical = 8.dp)
         ) {
-            items(apps) { app ->
-                AppListItem(app)
+            items(apps, key = { it.name }) { app ->
+                AppListItem(app, onAppClick = onAppClick)
             }
         }
     }
@@ -63,8 +66,8 @@ fun AppListScreen(apps: List<AppModel>) {
 
 @Preview
 @Composable
-fun AppListScreenPreview() {
+private fun AppListScreenPreview() {
     VKPracticeOneTheme {
-        AppListScreen(appsData)
+        AppListScreen(appsData, onAppClick = {})
     }
 }
