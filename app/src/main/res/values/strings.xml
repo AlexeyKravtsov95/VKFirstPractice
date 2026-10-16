@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">VKPracticeOne</string>
+    <string name="title_topbar">Приложения</string>
+    <string name="install_button">Установить</string>
+    <string name="under_development">В процессе разработки</string>
+    <string name="title_showcase">Витрина</string>
 </resources>
