@@ -8,8 +8,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.alexkravtsov.vkpracticeone.model.appsData
 import com.alexkravtsov.vkpracticeone.model.showcaseApps
-import com.alexkravtsov.vkpracticeone.screen.applist.AppListScreen
-import com.alexkravtsov.vkpracticeone.screen.detailcard.AppDetailsScreen
+import com.alexkravtsov.vkpracticeone.presentation.applist.AppListScreen
+import com.alexkravtsov.vkpracticeone.presentation.detailcard.AppDetailsScreen
 
 @Composable
 fun AppRoot() {
@@ -20,7 +20,6 @@ fun AppRoot() {
     NavHost(navController = navController, startDestination = AppListRoute) {
         composable<AppListRoute> {
             AppListScreen(
-                apps = appsData,
                 onAppClick = { app -> navController.navigate(AppDetailsRoute(app.name)) }
             )
         }

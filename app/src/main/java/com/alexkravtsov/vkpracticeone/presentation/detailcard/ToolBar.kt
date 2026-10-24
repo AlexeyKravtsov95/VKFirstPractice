@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.screen.detailcard
+package com.alexkravtsov.vkpracticeone.presentation.detailcard
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
