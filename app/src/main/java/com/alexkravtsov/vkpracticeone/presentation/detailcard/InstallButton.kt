@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.screen.detailcard
+package com.alexkravtsov.vkpracticeone.presentation.detailcard
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape

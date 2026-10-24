@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.screen.detailcard
+package com.alexkravtsov.vkpracticeone.presentation.detailcard
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.alexkravtsov.vkpracticeone.R
 import com.alexkravtsov.vkpracticeone.model.AppModel
-import com.alexkravtsov.vkpracticeone.screen.applist.AppListItem
+import com.alexkravtsov.vkpracticeone.presentation.applist.AppListItem
 
 @Composable
 fun ShowcaseBlock(

@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.screen.detailcard
+package com.alexkravtsov.vkpracticeone.presentation.detailcard
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.alexkravtsov.vkpracticeone.model.AppModel
-import com.alexkravtsov.vkpracticeone.model.appsData
 import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 
 @Composable

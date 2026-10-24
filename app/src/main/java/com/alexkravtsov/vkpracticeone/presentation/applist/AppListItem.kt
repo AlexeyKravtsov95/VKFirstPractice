@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.screen.applist
+package com.alexkravtsov.vkpracticeone.presentation.applist
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
