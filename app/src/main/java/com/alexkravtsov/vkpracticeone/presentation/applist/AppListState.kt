@@ -1,6 +1,6 @@
 package com.alexkravtsov.vkpracticeone.presentation.applist
 
-import com.alexkravtsov.vkpracticeone.model.AppModel
+import com.alexkravtsov.vkpracticeone.domain.AppModel
 
 sealed interface AppListState {
     data object Loading : AppListState

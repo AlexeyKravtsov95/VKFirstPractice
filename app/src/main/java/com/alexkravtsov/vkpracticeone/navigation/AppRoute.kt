@@ -6,8 +6,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.alexkravtsov.vkpracticeone.model.appsData
-import com.alexkravtsov.vkpracticeone.model.showcaseApps
+import com.alexkravtsov.vkpracticeone.data.AppModelMapper
+import com.alexkravtsov.vkpracticeone.data.appsData
+import com.alexkravtsov.vkpracticeone.data.showcaseApps
 import com.alexkravtsov.vkpracticeone.presentation.applist.AppListScreen
 import com.alexkravtsov.vkpracticeone.presentation.detailcard.AppDetailsScreen
 
@@ -15,7 +16,11 @@ import com.alexkravtsov.vkpracticeone.presentation.detailcard.AppDetailsScreen
 fun AppRoot() {
     val navController = rememberNavController()
     val catalog = remember {
-        (appsData + showcaseApps).distinctBy { it.name }.associateBy { it.name }
+        val mapper = AppModelMapper()
+        (appsData + showcaseApps)
+            .map { mapper.map(it) }
+            .distinctBy { it.name }
+            .associateBy { it.name }
     }
     NavHost(navController = navController, startDestination = AppListRoute) {
         composable<AppListRoute> {

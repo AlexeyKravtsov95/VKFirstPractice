@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.alexkravtsov.vkpracticeone.R
-import com.alexkravtsov.vkpracticeone.model.AppModel
+import com.alexkravtsov.vkpracticeone.domain.AppModel
 import com.alexkravtsov.vkpracticeone.presentation.applist.AppListItem
 
 @Composable
