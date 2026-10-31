@@ -1,4 +1,4 @@
-package com.alexkravtsov.vkpracticeone.model
+package com.alexkravtsov.vkpracticeone.domain
 
 data class AppModel(
     val name: String,

@@ -26,7 +26,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.alexkravtsov.vkpracticeone.model.AppModel
+import com.alexkravtsov.vkpracticeone.domain.AppModel
 
 @SuppressLint("LocalContextGetResourceValueCall")
 @Composable
@@ -53,7 +53,7 @@ fun AppDetailsScreen(
         when (val currentState = state) {
             is AppDetailsState.Content -> Content(
                 app = app,
-                showcase = currentState.apps,
+                showcase = currentState.showcase,
                 onInstallClick = viewModel::onButtonClick,
                 onShowcaseAppClick = onShowcaseAppClick,
                 onBackClick = onBackClick

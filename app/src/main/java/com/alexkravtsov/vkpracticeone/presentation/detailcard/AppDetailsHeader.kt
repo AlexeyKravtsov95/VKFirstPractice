@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.alexkravtsov.vkpracticeone.model.AppModel
+import com.alexkravtsov.vkpracticeone.domain.AppModel
 import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 
 @Composable

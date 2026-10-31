@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.alexkravtsov.vkpracticeone.R
-import com.alexkravtsov.vkpracticeone.model.AppModel
+import com.alexkravtsov.vkpracticeone.domain.AppModel
 import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
