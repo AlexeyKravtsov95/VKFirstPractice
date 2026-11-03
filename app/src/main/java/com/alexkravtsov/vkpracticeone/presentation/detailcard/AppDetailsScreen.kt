@@ -25,7 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.alexkravtsov.vkpracticeone.domain.AppModel
 
 @SuppressLint("LocalContextGetResourceValueCall")
@@ -36,7 +36,7 @@ fun AppDetailsScreen(
     onShowcaseAppClick: (AppModel) -> Unit,
     onBackClick: () -> Unit,
 ) {
-    val viewModel = viewModel<AppDetailsViewModel>()
+    val viewModel: AppDetailsViewModel = hiltViewModel()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
     val context = LocalContext.current

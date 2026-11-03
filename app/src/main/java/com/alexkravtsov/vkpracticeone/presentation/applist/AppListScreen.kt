@@ -29,7 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.alexkravtsov.vkpracticeone.R
 import com.alexkravtsov.vkpracticeone.domain.AppModel
 import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
@@ -39,7 +39,7 @@ import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 fun AppListScreen(
     onAppClick: (AppModel) -> Unit,
 ) {
-    val viewModel = viewModel<AppListViewModel>()
+    val viewModel: AppListViewModel = hiltViewModel()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
 

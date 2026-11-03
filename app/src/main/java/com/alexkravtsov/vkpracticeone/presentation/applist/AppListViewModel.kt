@@ -2,10 +2,9 @@ package com.alexkravtsov.vkpracticeone.presentation.applist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alexkravtsov.vkpracticeone.data.AppModelApi
-import com.alexkravtsov.vkpracticeone.data.AppModelMapper
-import com.alexkravtsov.vkpracticeone.data.AppModelRepositoryImpl
 import com.alexkravtsov.vkpracticeone.domain.GetAppsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,12 +12,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class AppListViewModel : ViewModel() {
-    private val getAppsUseCase = GetAppsUseCase(
-        repository = AppModelRepositoryImpl(
-            api = AppModelApi(), mapper = AppModelMapper()
-        )
-    )
+@HiltViewModel
+class AppListViewModel @Inject constructor(
+    private val getAppsUseCase: GetAppsUseCase
+) : ViewModel() {
 
     private val _state = MutableStateFlow<AppListState>(
         AppListState.Loading

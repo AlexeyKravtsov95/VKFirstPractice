@@ -2,8 +2,9 @@ package com.alexkravtsov.vkpracticeone.data
 
 import com.alexkravtsov.vkpracticeone.domain.AppModel
 import com.alexkravtsov.vkpracticeone.domain.AppModelRepository
+import javax.inject.Inject
 
-class AppModelRepositoryImpl(
+class AppModelRepositoryImpl @Inject constructor(
     private val api: AppModelApi,
     private val mapper: AppModelMapper,
 ) : AppModelRepository {

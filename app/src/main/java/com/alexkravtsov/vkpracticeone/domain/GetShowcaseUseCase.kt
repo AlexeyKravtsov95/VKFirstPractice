@@ -1,6 +1,8 @@
 package com.alexkravtsov.vkpracticeone.domain
 
-class GetShowcaseUseCase(
+import javax.inject.Inject
+
+class GetShowcaseUseCase @Inject constructor(
     private val repository: AppModelRepository
 ) {
     suspend operator fun invoke(): List<AppModel> {
