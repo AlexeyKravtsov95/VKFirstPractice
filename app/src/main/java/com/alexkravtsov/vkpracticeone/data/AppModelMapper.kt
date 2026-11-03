@@ -1,8 +1,9 @@
 package com.alexkravtsov.vkpracticeone.data
 
 import com.alexkravtsov.vkpracticeone.domain.AppModel
+import javax.inject.Inject
 
-class AppModelMapper {
+class AppModelMapper @Inject constructor() {
     fun map(dto: AppModelDto): AppModel = AppModel(
         name = dto.name,
         description = dto.description,
