@@ -63,6 +63,7 @@ fun AppDetailsHeader(
 @Preview
 private fun AppDetailsHeader() {
     val app = AppModel(
+        id = "2",
         name = "Telegram",
         description = "Telegram – простое, быстрое и безопасное приложение для обмена сообщениями.",
         category = "Связь",

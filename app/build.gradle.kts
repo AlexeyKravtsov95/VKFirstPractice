@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.hilt.android)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlinx.serialization)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     testImplementation(libs.junit)
