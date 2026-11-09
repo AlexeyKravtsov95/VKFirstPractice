@@ -79,6 +79,7 @@ private fun AppListItemPreview() {
     VKPracticeOneTheme {
         AppListItem(
             app = AppModel(
+                id = "2",
                 name = "WhatsApp Messenger",
                 description = "WhatsApp from Meta WhatsApp — это БЕСПЛАТНОЕ приложение для видеозвонков и обмена сообщениями",
                 category = "Связь",

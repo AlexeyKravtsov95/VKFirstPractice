@@ -5,20 +5,10 @@ import com.alexkravtsov.vkpracticeone.domain.AppModelRepository
 import javax.inject.Inject
 
 class AppModelRepositoryImpl @Inject constructor(
-    private val api: AppModelApi,
+    private val api: CatalogApi,
     private val mapper: AppModelMapper,
 ) : AppModelRepository {
-    override suspend fun get(): List<AppModel> {
-        val dto = api.getApps()
-        val domain = mapper.map(dto)
+    override suspend fun get(): List<AppModel> = mapper.map(api.getCatalog())
 
-        return domain
-    }
-
-    override suspend fun getShowcase(): List<AppModel> {
-        val dto = api.getShowcase()
-        val domain = mapper.map(dto)
-
-        return domain
-    }
+    override suspend fun getShowcase(): List<AppModel> = mapper.map(showcaseApps)
 }
