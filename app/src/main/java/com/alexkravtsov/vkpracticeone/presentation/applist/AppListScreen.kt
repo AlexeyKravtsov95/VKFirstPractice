@@ -77,6 +77,7 @@ fun AppListScreen(
         when (val currentState = state) {
             is AppListState.Content -> Content(
                 apps = currentState.apps,
+                ratings = currentState.ratings,
                 paddingValues = innerPadding,
                 onAppClick = onAppClick,
             )
@@ -103,6 +104,7 @@ fun AppListScreen(
 @Composable
 private fun Content(
     apps: List<AppModel>,
+    ratings: Map<String, Float>,
     paddingValues: PaddingValues,
     onAppClick: (AppModel) -> Unit
 ) {
@@ -113,7 +115,7 @@ private fun Content(
         contentPadding = PaddingValues(vertical = 8.dp)
     ) {
         items(apps, key = { it.name }) { app ->
-            AppListItem(app, onAppClick = onAppClick)
+            AppListItem(app, rating = ratings[app.id], onAppClick = onAppClick)
         }
     }
 }

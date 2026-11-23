@@ -10,6 +10,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +30,7 @@ import com.alexkravtsov.vkpracticeone.ui.theme.VKPracticeOneTheme
 @Composable
 fun AppListItem(
     app: AppModel,
+    rating: Float? = null,
     modifier: Modifier = Modifier,
     onAppClick: (AppModel) -> Unit = {},
 ) {
@@ -55,6 +59,22 @@ fun AppListItem(
                 style = MaterialTheme.typography.titleLarge,
                 maxLines = 1
             )
+            if (rating != null) {
+                Spacer(Modifier.height(2.dp))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(Modifier.width(4.dp))
+                    Text(
+                        text = "%.1f".format(rating),
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
+            }
             Spacer(Modifier.height(2.dp))
             Text(
                 text = app.description,
