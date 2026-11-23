@@ -54,7 +54,8 @@ fun AppDetailsScreen(
             is AppDetailsState.Content -> Content(
                 app = app,
                 showcase = currentState.showcase,
-                onInstallClick = viewModel::onButtonClick,
+                installState = currentState.installState,
+                onInstallClick = viewModel::onInstallClick,
                 onShowcaseAppClick = onShowcaseAppClick,
                 onBackClick = onBackClick
             )
@@ -83,6 +84,7 @@ fun AppDetailsScreen(
 private fun Content(
     app: AppModel,
     showcase: List<AppModel>,
+    installState: InstallState,
     onInstallClick: () -> Unit,
     onShowcaseAppClick: (AppModel) -> Unit,
     onBackClick: () -> Unit,
@@ -101,6 +103,7 @@ private fun Content(
         )
         Spacer(Modifier.height(8.dp))
         InstallButton(
+            installState = installState,
             onClick = onInstallClick,
             modifier = Modifier
                 .fillMaxWidth()
