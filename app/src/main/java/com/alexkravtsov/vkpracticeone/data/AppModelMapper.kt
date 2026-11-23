@@ -21,4 +21,14 @@ class AppModelMapper @Inject constructor() {
         category = dto.category,
         iconUrl = dto.iconUrl,
     )
+
+    fun toDto(model: AppModel): AppModelDto = AppModelDto(
+        id = model.id,
+        name = model.name,
+        description = model.description,
+        category = model.category,
+        iconUrl = model.iconUrl
+    )
+
+    fun toDto(models: List<AppModel>): List<AppModelDto> = models.map { toDto(it) }
 }
